@@ -6,7 +6,7 @@ const questions = [
     },
     {
        type: 'input',
-       name: 'discription',
+       name: 'description',
        message: 'What is the discription of the project?'
     },
     {

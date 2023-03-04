@@ -1,22 +1,53 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+const { writeFile } = require("fs");
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
-
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
-
-// TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  console.log(data);
-  
-  return `# ${data.title}
+  let output = `
+  # ${data.title}
 
-`;
+  ${data.license == 'None' ? '' : `![LICENSE](https://img.shields.io/badge/LICENSE-${data.license}-success)`}
+  
+  ## Description
+  
+  ${data.description}
+  
+  ## Table of Contents
+  
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Credits](#credits)
+  - [License](#license)
+  
+  ## Installation
+  
+ ${data.installation}
+  
+  ## Usage
+  
+ ${data.usage}
+  
+
+  ## Credits
+  
+ ${data.contribute}
+  
+  ## License
+  
+  ${data.license}
+  
+  ## Tests
+  
+  ${data.test}
+  
+  ## Any Questions or Concerns I can be reached at
+  
+  [Email](mailto:${data.email})
+
+  [GitHub](https://github.com/${data.github})`;
+
+  writeFile("./README.md", output, (err) => {
+    if (err) throw err;
+    console.log("README.md generated!!!");
+  });
 }
 
 module.exports = generateMarkdown;

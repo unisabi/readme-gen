@@ -1,5 +1,5 @@
 const { prompt } = require('inquirer');
 const questions = require('./questions');
-const generateMarkdown = require('./generateMarkdown');
+const mdGen = require('./generateMarkdown');
 
-prompt(questions).then(generateMarkdown)
+prompt(questions).then(mdGen)
