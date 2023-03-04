@@ -38,7 +38,7 @@ function generateMarkdown(data) {
   
   ${data.test}
   
-  ## Any Questions or Concerns I can be reached at
+  ## Any Questions or Concerns I Can Be Reached At
   
   [Email](mailto:${data.email})
 
